@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Book extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username', 'password', 'role'];
+    protected $fillable = ['title', 'author', 'publication_year', 'available'];
 
     public function reservations()
     {
