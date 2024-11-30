@@ -8,7 +8,7 @@ class CreateBooksTable extends Migration
 {
     public function up()
     {
-        Schema::create('book', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('author');
@@ -20,6 +20,6 @@ class CreateBooksTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('book');
+        Schema::dropIfExists('books');
     }
 }
