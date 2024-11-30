@@ -9,7 +9,16 @@ class User extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username', 'password', 'role'];
+    protected $fillable = ['username', 'password', 'email', 'role'];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->password = bcrypt($user->password);
+        });
+    }
 
     public function reservations()
     {
