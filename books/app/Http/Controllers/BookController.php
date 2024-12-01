@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index() // получение списка всех книг
+    public function index()
     {
         $books = Book::all();
         return response()->json($books);
     }
 
-    public function store(Request $request) // создание новой книги
+    public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',
@@ -26,7 +26,7 @@ class BookController extends Controller
         return response()->json($book, 201);
     }
 
-    public function update(Request $request, $id) // обновление существующей книги
+    public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'sometimes|required|string|max:255',
@@ -40,7 +40,7 @@ class BookController extends Controller
         return response()->json($book);
     }
 
-    public function destroy($id) // удаление книги
+    public function destroy($id)
     {
         $book = Book::findOrFail($id);
         $book->delete();

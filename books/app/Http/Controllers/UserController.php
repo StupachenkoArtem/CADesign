@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -9,7 +9,6 @@ class UserController
 {
     public function listUsers()
     {
-        // Проверка на наличие прав администратора
         if (!$this->isAdmin()) {
             return response()->json(['error' => 'Forbidden'], 403);
         }
@@ -29,7 +28,6 @@ class UserController
 
     public function createUser (Request $request)
     {
-        // Проверка на наличие прав администратора
         if (!$this->isAdmin()) {
             return response()->json(['error' => 'Forbidden'], 403);
         }
@@ -46,7 +44,6 @@ class UserController
 
     public function updateUser (Request $request, $id)
     {
-        // Проверка на наличие прав администратора
         if (!$this->isAdmin()) {
             return response()->json(['error' => 'Forbidden'], 403);
         }
@@ -68,7 +65,6 @@ class UserController
 
     public function deleteUser ($id)
     {
-        // Проверка на наличие прав администратора
         if (!$this->isAdmin()) {
             return response()->json(['error' => 'Forbidden'], 403);
         }

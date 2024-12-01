@@ -1,7 +1,7 @@
 <?php
 
 use App\Controllers\ReservationController;
-use App\Controllers\UserController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +22,7 @@ Route::prefix('api/reservations')->group(function () {
 
 Route::middleware('api')->group(function () {
     Route::get('/api/users', [UserController::class, 'listUsers']);
-    Route::get('/api/users/{id}', [UserController::class, 'getUser ']);
+    Route::get('/api/users/{id}', [UserController::class, 'getUser']);
     Route::post('/api/users', [UserController::class, 'createUser ']);
     Route::put('/api/users/{id}', [UserController::class, 'updateUser ']);
     Route::delete('/api/users/{id}', [UserController::class, 'deleteUser ']);

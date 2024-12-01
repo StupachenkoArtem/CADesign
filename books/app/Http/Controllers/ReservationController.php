@@ -19,7 +19,7 @@ class ReservationController
         $userId = $request->input('user_id');
         $userRole = $request->input('role');
 
-        $book = Book::find($bookId); // Проверка доступности книги
+        $book = Book::find($bookId);
         if (!$book) {
             return response()->json(['error' => 'Book not found'], 404);
         }
@@ -28,13 +28,13 @@ class ReservationController
             return response()->json(['error' => 'Book not available'], 403);
         }
 
-        $reservation = Reservation::create([ // Создание новой резервации
+        $reservation = Reservation::create([
             'user_id' => $userId,
             'book_id' => $bookId,
             'reservation_date' => now(),
         ]);
 
-        $book->availability = false; // Обновление доступности книги
+        $book->availability = false;
         $book->save();
 
         return response()->json(['message' => 'Book reserved successfully', 'reservation' => $reservation]);
@@ -45,7 +45,7 @@ class ReservationController
         $userId = $request->input('user_id');
         $userRole = $request->input('role');
 
-        $reservation = Reservation::find($reservationId); // Поиск резервации
+        $reservation = Reservation::find($reservationId);
         if (!$reservation) {
             return response()->json(['error' => 'Reservation not found'], 404);
         }
