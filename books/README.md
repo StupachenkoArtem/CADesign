@@ -1,8 +1,8 @@
 Стек технологий:
--PHP
--Laravel
--MySQL
--OpenAPI (Swagger)
+1.PHP
+2.Laravel
+3.MySQL
+4.OpenAPI (Swagger)
 
 Установка:
 
@@ -38,21 +38,21 @@ php artisan serve
 Эндпоинты API
 
 Пользователи:
-GET /api/users - Получить список всех пользователей
-GET /api/users/{id} - Получить пользователя по ID
-POST /api/users - Создать нового пользователя
-PUT /api/users/{id} - Обновить информацию о пользователе
-DELETE /api/users/{id} - Удалить пользователя
+1) GET /api/users - Получить список всех пользователей
+2) GET /api/users/{id} - Получить пользователя по ID
+3) POST /api/users - Создать нового пользователя
+4) PUT /api/users/{id} - Обновить информацию о пользователе
+5) DELETE /api/users/{id} - Удалить пользователя
 
 Книги:
-GET /api/books - Получить список всех книг
-POST /api/books - Создать новую книгу
-GET /api/books/{id} - Получить книгу по ID
-PUT /api/books/{id} - Обновить информацию о книге
-DELETE /api/books/{id} - Удалить книгу
+1) GET /api/books - Получить список всех книг
+2) POST /api/books - Создать новую книгу
+3) GET /api/books/{id} - Получить книгу по ID
+4) PUT /api/books/{id} - Обновить информацию о книге
+5) DELETE /api/books/{id} - Удалить книгу
 
 Резервирования:
-GET /api/reservations - Получить список всех резервирований
-POST /api/reservations/{bookId} - Забронировать книгу
-PUT /api/reservations/return/{reservationId} - Вернуть забронированную книгу
-DELETE /api/reservations/{reservationId} - Удалить резервирование
+1) GET /api/reservations - Получить список всех резервирований
+2) POST /api/reservations/{bookId} - Забронировать книгу
+3) PUT /api/reservations/return/{reservationId} - Вернуть забронированную книгу
+4) DELETE /api/reservations/{reservationId} - Удалить резервирование
