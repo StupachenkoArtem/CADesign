@@ -8,11 +8,7 @@
 
 1.Клонируйте репозиторий:
 
-<<<<<<< HEAD
 https://github.com/StupachenkoArtem/CADesign.git
-=======
-git clone https://github.com/yourusername/yourproject.git
->>>>>>> b39f25e7489e4de3276bd7a9fd8b2f08c0f3caf2
 
 2.Перейдите в директорию проекта:
 
