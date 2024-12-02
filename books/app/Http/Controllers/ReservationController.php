@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 /**
  * @OA\Info(title="Library API", version="1.0.0")
  */
-
 class ReservationController
 {
       /**
@@ -22,13 +21,11 @@ class ReservationController
      *     )
      * )
      */
-   
     public function listReservations()
     {
         $reservations = Reservation::with(['user', 'book'])->get();
         return response()->json($reservations);
     }
-
     /**
      * @OA\Post(
      *     path="/reservations/{bookId}",
@@ -62,7 +59,6 @@ class ReservationController
      *     )
      * )
      */
-
     public function reserveBook(Request $request, $bookId)
     {
         $userId = $request->input('user_id');
@@ -88,7 +84,6 @@ class ReservationController
 
         return response()->json(['message' => 'Book reserved successfully', 'reservation' => $reservation]);
     }
-
     /**
      * @OA\Post(
      *     path="/reservations/return/{reservationId}",
@@ -122,7 +117,6 @@ class ReservationController
      *     )
      * )
      */
-
     public function returnBook(Request $request, $reservationId)
     {
         $userId = $request->input('user_id');
@@ -146,7 +140,6 @@ class ReservationController
 
         return response()->json(['message' => 'Book returned successfully']);
     }
-
     /**
      * @OA\Delete(
      *     path="/reservations/{reservationId}",
@@ -168,7 +161,6 @@ class ReservationController
      *     )
      * )
      */
-
     public function deleteReservation($reservationId)
     {
         $reservation = Reservation::find($reservationId);
